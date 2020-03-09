@@ -1,0 +1,35 @@
+- hosts: vmcreate
+  gather_facts: False
+  connection: local
+  vars:
+    vcenter_hostname: 192.168.100.101
+    esxhost: 192.168.100.102
+    datastore: datastore1
+    network: VM Network
+    vmtemplate: vcsa
+    vmcluster: SiteA
+    notes: Created by Ansible
+  tasks:
+    - name: check for required variables
+      fail: msg="Must pass name to -e"
+      when: name is not defined
+
+    - name: Check for vSpehre access parameters
+      fail: msg="Must set vcenter_user and vcenter_pass in Credentials"
+      when: (vcenter_user is not defined) or (vcenter_pass is not defined)
+
+    - name: Create VM from template
+      vsphere_guest:
+        vcenter_hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_user }}"
+        password: "{{ vcenter_pass }}"
+        guest: "{{ name }}"
+        from_template: yes
+        template_src: "{{ vmtemplate }}"
+        cluster: "{{ vmcluster }}"
+        resource_pool: "/Resources"
+        vm_extra_config:
+          notes: "{{ notes }}"
+        esxi:
+          datacenter: SiteA
+          hostname: "{{ esxhost }}"
