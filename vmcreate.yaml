@@ -8,7 +8,7 @@
     esxhost: 192.168.100.102
     datastore: datastore1
     network: VM Network
-    vmtemplate: vcsa
+    template: vcsa
     vmcluster: SiteA
     name: testvm
     notes: Created by Ansible
@@ -23,16 +23,12 @@
 
     - name: Create VM from template
       vmware_guest:
-        vcenter_hostname: "{{ vcenter_hostname }}"
+        hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_user }}"
         password: "{{ vcenter_pass }}"
-        guest: "{{ name }}"
         from_template: yes
         template_src: "{{ vmtemplate }}"
         cluster: "{{ vmcluster }}"
         resource_pool: "/Resources"
-        vm_extra_config:
-          notes: "{{ notes }}"
-        esxi:
-          datacenter: SiteA
-          hostname: "{{ esxhost }}"
+        esxi_hostname: "{{ esxhost }}"
+
