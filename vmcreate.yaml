@@ -22,7 +22,7 @@
       when: (vcenter_user is not defined) or (vcenter_pass is not defined)
 
     - name: Create VM from template
-      vsphere_guest:
+      vmware_guest:
         vcenter_hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_user }}"
         password: "{{ vcenter_pass }}"
