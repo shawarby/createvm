@@ -11,6 +11,7 @@
     template: vcsa
     vmcluster: SiteA
     name: testvm
+    folder_name: vms
     notes: Created by Ansible
   tasks:
     - name: check for required variables
@@ -28,6 +29,7 @@
         password: "{{ vcenter_pass }}"
         is_template: yes
         name: "{{ name }}"
+        folder: "{{ folder_name }}"
         template_src: "{{ template }}"
         cluster: "{{ vmcluster }}"
         resource_pool: "/Resources"
