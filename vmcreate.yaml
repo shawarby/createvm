@@ -30,5 +30,4 @@
         template_src: "{{ template }}"
         cluster: "{{ vmcluster }}"
         resource_pool: "/Resources"
-        esxi_hostname: "{{ esxhost }}"
 
