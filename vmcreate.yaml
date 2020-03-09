@@ -8,6 +8,7 @@
     network: VM Network
     vmtemplate: vcsa
     vmcluster: SiteA
+    name: testvm
     notes: Created by Ansible
   tasks:
     - name: check for required variables
