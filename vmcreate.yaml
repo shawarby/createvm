@@ -28,7 +28,6 @@
         username: "{{ vcenter_user }}"
         password: "{{ vcenter_pass }}"
         datacenter: "{{ datacenter }}"
-        is_template: yes
         name: "{{ name }}"
         folder: "{{ folder_name }}"
         template_src: "{{ template }}"
