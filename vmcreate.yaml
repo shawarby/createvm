@@ -5,11 +5,11 @@
     vcenter_hostname: 192.168.100.101
     vcenter_user: administrator@vsphere.local
     vcenter_pass: P@ssw0rd
-    esxhost: 192.168.100.102
+    datacenter: SiteA
     datastore: datastore1
     network: VM Network
     template: vcsa
-    vmcluster: SiteA
+    vmcluster: ClusterA
     name: testvm
     folder_name: vms
     notes: Created by Ansible
@@ -27,6 +27,7 @@
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_user }}"
         password: "{{ vcenter_pass }}"
+        datacenter: "{{ datacenter }}"
         is_template: yes
         name: "{{ name }}"
         folder: "{{ folder_name }}"
