@@ -13,6 +13,8 @@
     name: testvm
     folder_name: vms
     notes: Created by Ansible
+    
+    guest_domain: mydomain
   tasks:
     - name: check for required variables
       fail: msg="Must pass name to -e"
