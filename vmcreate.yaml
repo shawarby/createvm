@@ -33,5 +33,4 @@
         folder: "{{ folder_name }}"
         template_src: "{{ template }}"
         cluster: "{{ vmcluster }}"
-        resource_pool: "/Resources"
 
