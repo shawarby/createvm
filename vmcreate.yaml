@@ -27,7 +27,7 @@
         username: "{{ vcenter_user }}"
         password: "{{ vcenter_pass }}"
         from_template: yes
-        template_src: "{{ vmtemplate }}"
+        template_src: "{{ template }}"
         cluster: "{{ vmcluster }}"
         resource_pool: "/Resources"
         esxi_hostname: "{{ esxhost }}"
