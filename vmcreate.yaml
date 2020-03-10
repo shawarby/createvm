@@ -2,7 +2,10 @@
   gather_facts: False
   connection: local
   vars:
-
+    vmware:
+      host: '{{ lookup("env", "VMWARE_HOST") }}'
+      username: '{{ lookup("env", "VMWARE_USER") }}'
+      password: '{{ lookup("env", "VMWARE_PASSWORD") }}'
     datacenter: SiteA
     datastore: datastore1
     network: VM Network
@@ -22,9 +25,9 @@
 
     - name: Create VM from template
       vmware_guest:
-        hostname: "{{ lookup("env", "VMWARE_HOST") }}"
-        username: "{{ lookup("env", "VMWARE_USER") }}"
-        password: "{{ lookup("env", "VMWARE_PASSWORD") }}"
+        hostname: "{{ host }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
         datacenter: "{{ datacenter }}"
         name: "{{ name }}"
         folder: "{{ folder_name }}"
