@@ -27,5 +27,5 @@
         template_src: "{{ template }}"
         cluster: "{{ vmcluster }}"
         
-        cusotmization:
-        custoimzation_spec: "{{ customize_spec }}"
+        customization:
+        customization_spec: "{{ customize_spec }}"
