@@ -23,9 +23,9 @@
 
     - name: Create VM from template
       vmware_guest:
-        hostname: "{{ vcenter_hostname }}"
-        username: "{{ vcenter_user }}"
-        password: "{{ vcenter_pass }}"
+        hostname: "{{ VMWARE_HOST }}"
+        username: "{{ VMWARE_USER }}"
+        password: "{{ VMWARE_PASSWORD }}"
         datacenter: "{{ datacenter }}"
         name: "{{ name }}"
         folder: "{{ folder_name }}"
