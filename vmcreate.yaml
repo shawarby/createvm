@@ -2,7 +2,7 @@
   gather_facts: False
   connection: local
   vars:
-    vmware_host: 192.168.100.101
+
     datacenter: SiteA
     datastore: datastore1
     network: VM Network
@@ -19,11 +19,12 @@
       when: name is not defined
 
 
+
     - name: Create VM from template
       vmware_guest:
-        hostname: "{{ vmware_host }}"
-        username: "{{ ansible_user }}"
-        password: "{{ ansible_password }}"
+        hostname: "{{ lookup("env", "VMWARE_HOST") }}"
+        username: "{{ lookup("env", "VMWARE_USER") }}"
+        password: "{{ lookup("env", "VMWARE_PASSWORD") }}"
         datacenter: "{{ datacenter }}"
         name: "{{ name }}"
         folder: "{{ folder_name }}"
