@@ -11,9 +11,9 @@
     template: 
     vmcluster: 
     vm_name: 
+    customize_spec: 
     folder_name: vms
     notes: Created by Ansible
-    guest_domain: mydomain
   tasks:
 
     - name: Create VM from template
@@ -27,17 +27,5 @@
         template_src: "{{ template }}"
         cluster: "{{ vmcluster }}"
         
-        networks:
-          - name: VM Network
-            ip: 192.168.10.11
-            netmask: 255.255.255.0
-        wait_for_ip_address: True
-        customization:
-          domain: "{{ guest_domain }}"
-          dns_servers:
-            - 8.9.9.9
-            - 7.8.8.9
-          dns_suffix:
-            - example.com
-            - example2.com
-
+        cusotmization:
+        custoimzation_spec: "{{ customize_spec }}"
