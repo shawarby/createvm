@@ -7,7 +7,7 @@
     network: VM Network
     template: vcsa
     vmcluster: ClusterA
-    name: testvm
+    name: testvm2
     folder_name: vms
     notes: Created by Ansible
     
