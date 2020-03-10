@@ -10,7 +10,7 @@
     network: VM Network
     template: 
     vmcluster: 
-    name: 
+    vm_name: 
     folder_name: vms
     notes: Created by Ansible
     
@@ -28,7 +28,7 @@
         username: "{{ vmware_username }}"
         password: "{{ vmware_password }}"
         datacenter: "{{ datacenter }}"
-        name: "{{ name }}"
+        name: "{{ vm_name }}"
         folder: "{{ folder_name }}"
         template_src: "{{ template }}"
         cluster: "{{ vmcluster }}"
