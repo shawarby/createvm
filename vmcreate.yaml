@@ -11,7 +11,7 @@
     template: 
     vmcluster: 
     vm_name: 
-    customize_spec: 
+    customize_spec: RHEL7
     folder_name: vms
     notes: Created by Ansible
   tasks:
@@ -26,6 +26,4 @@
         folder: "{{ folder_name }}"
         template_src: "{{ template }}"
         cluster: "{{ vmcluster }}"
-        
-        customization:
         customization_spec: "{{ customize_spec }}"
