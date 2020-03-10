@@ -2,9 +2,6 @@
   gather_facts: False
   connection: local
   vars:
-    vcenter_hostname: 192.168.100.101
-    vcenter_user: administrator@vsphere.local
-    vcenter_pass: P@ssw0rd
     datacenter: SiteA
     datastore: datastore1
     network: VM Network
