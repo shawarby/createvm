@@ -18,9 +18,6 @@
       fail: msg="Must pass name to -e"
       when: name is not defined
 
-    - name: Check for vSpehre access parameters
-      fail: msg="Must set vcenter_user and vcenter_pass in Credentials"
-      when: (vcenter_user is not defined) or (vcenter_pass is not defined)
 
     - name: Create VM from template
       vmware_guest:
