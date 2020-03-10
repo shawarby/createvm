@@ -2,15 +2,15 @@
   gather_facts: False
   connection: local
   vars:
-    host: 192.168.100.101
-    vmware_username: administrator@vsphere.local
-    vmware_password: P@ssw0rd
-    datacenter: SiteA
+    host: 
+    vmware_username: 
+    vmware_password: 
+    datacenter: 
     datastore: datastore1
     network: VM Network
-    template: vcsa
-    vmcluster: ClusterA
-    name: testvm2
+    template: 
+    vmcluster: 
+    name: 
     folder_name: vms
     notes: Created by Ansible
     
