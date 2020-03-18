@@ -15,13 +15,14 @@
     vmware_password: 
     datacenter: 
     datastore: datastore1
-    network: VM Network
     template: 
     vmcluster: 
     customize_spec: RHEL7
     folder_name: vms
     notes: Created by Ansible
     vm_name: "{{ survey_vm_name.split('\n') }}"
+    vm_ip: "{{ survey_vm_ip.split('\n') }}"
+    
     
   tasks:
 
@@ -31,7 +32,7 @@
         username: "{{ vmware_username }}"
         password: "{{ vmware_password }}"
         datacenter: "{{ datacenter }}"
-        name: "{{ item }}"
+        name: "{{ item.name }}"
         folder: "{{ folder_name }}"
         template_src: "{{ template }}"
         cluster: "{{ vmcluster }}"
@@ -39,6 +40,18 @@
         hardware:
           num_cpu: "{{ vm_size[flavor]['cpu'] }}"
           memory_mb: "{{ vm_size[flavor]['memory'] }}"
+        networks:
+          - name: VM Network
+            ip: "{{ item.ip }}"
+            netmask: 255.255.255.0
+            gateway: 192.168.1.1
+#            mac: aa:bb:dd:aa:00:14
+#           domain: my_domain
+#           dns_servers:
+#           - 192.168.1.1
+#           - 192.168.1.2
+#         - vlan: 1234
+#           type: dhcp
       loop:
-        "{{ vm_name }}"
+         - { name: "{{ vm_name }}", ip: "{{ vm_ip }}" }
 
