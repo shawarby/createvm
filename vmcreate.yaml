@@ -32,6 +32,9 @@
         cluster: "{{ vmcluster }}"
 #       customization_spec: "{{ customize_spec }}"
         wait_for_ip_address: yes
+        customization:
+          hostname: "{{ item }}"
+          domain: "{{ domain_name }}"
         hardware:
           num_cpus: "{{ vm_size[flavor]['cpu'] }}"
           memory_mb: "{{ vm_size[flavor]['memory'] }}"
