@@ -12,7 +12,7 @@
         memory: 4096
     datastore: datastore1
     customize_spec: RHEL7
-    folder_name: vms
+#   folder_name: vms
     notes: Created by Ansible
     vm_name: "{{ survey_vm_name.split('\n') }}"
     
