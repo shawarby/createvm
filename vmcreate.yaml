@@ -22,6 +22,7 @@
     customize_spec: RHEL7
     folder_name: vms
     notes: Created by Ansible
+    
   tasks:
 
     - name: Create VM from template
@@ -30,7 +31,7 @@
         username: "{{ vmware_username }}"
         password: "{{ vmware_password }}"
         datacenter: "{{ datacenter }}"
-        name: "{{ vm_name }}"
+        name: "{{ item }}"
         folder: "{{ folder_name }}"
         template_src: "{{ template }}"
         cluster: "{{ vmcluster }}"
@@ -38,3 +39,6 @@
         hardware:
           num_cpu: "{{ vm_size[flavor]['cpu'] }}"
           memory_mb: "{{ vm_size[flavor]['memory'] }}"
+      loop:
+        "{{ vm_name_test }}"
+        
