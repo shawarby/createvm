@@ -2,6 +2,14 @@
   gather_facts: False
   connection: local
   vars:
+    flavor:
+    vm_size:
+      small:
+        cpu: 2
+        memory: 2048
+      medium:
+        cpu: 4
+        memory: 4096
     host: 
     vmware_username: 
     vmware_password: 
@@ -27,3 +35,6 @@
         template_src: "{{ template }}"
         cluster: "{{ vmcluster }}"
         customization_spec: "{{ customize_spec }}"
+        hardware:
+          num_cpu: "{{ vm_size[flavor]['cpu'] }}"
+          memory_mb: "{{ vm_size[flavor]['memory'] }}"
