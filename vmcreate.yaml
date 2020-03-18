@@ -24,6 +24,7 @@
         hostname: "{{ host }}"
         username: "{{ vmware_username }}"
         password: "{{ vmware_password }}"
+        validate_certs: False
         datacenter: "{{ datacenter }}"
         name: "{{ item }}"
         folder: "{{ folder_name }}"
