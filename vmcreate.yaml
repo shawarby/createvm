@@ -42,3 +42,6 @@
       loop:
         "{{ vm_name_test }}"
         
+        
+- vm_name_test: "{{ survey_vm_name_test.split('\n') }}"
+        
