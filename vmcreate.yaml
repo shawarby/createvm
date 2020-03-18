@@ -30,7 +30,7 @@
         folder: "{{ folder_name }}"
         template_src: "{{ template }}"
         cluster: "{{ vmcluster }}"
-        customization_spec: "{{ customize_spec }}"
+#       customization_spec: "{{ customize_spec }}"
         wait_for_ip_address: yes
         hardware:
           num_cpus: "{{ vm_size[flavor]['cpu'] }}"
