@@ -16,7 +16,7 @@
 #   customize_spec: RHEL7
     folder_name: 'Discovered virtual machine'
     notes: Created by Ansible
-    vm_name: "{{ survey_vm_name.split('\n') }}"
+#   vm_name: "{{ survey_vm_name.split('\n') }}"
     
     
   tasks:
@@ -28,7 +28,7 @@
         password: "{{ vmware_password }}"
         validate_certs: False
         datacenter: "{{ datacenter }}"
-        name: "{{ item }}"
+        name: "{{ vm_name }}"
         folder: "{{ folder_name }}"
         template_src: "{{ template }}"
         cluster: "{{ vmcluster }}"
@@ -56,6 +56,6 @@
 #           - 192.168.1.2
 #         - vlan: 1234
 #           type: dhcp
-      loop: "{{ vm_name }}"
+#     loop: "{{ vm_name }}"
 #        - { name: "{{ vm_name }}", ip: "{{ vm_ip }}" }
 
