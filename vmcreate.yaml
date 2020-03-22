@@ -35,7 +35,7 @@
 #       customization_spec: "{{ customize_spec }}"
 #       wait_for_ip_address: yes
         customization:
-          hostname: "{{ item }}"
+          hostname: "{{ vm_name }}"
           domain: "{{ domain_name }}"
         disk:
         - disk2:
