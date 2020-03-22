@@ -33,7 +33,7 @@
         template_src: "{{ template }}"
         cluster: "{{ vmcluster }}"
 #       customization_spec: "{{ customize_spec }}"
-        wait_for_ip_address: yes
+#       wait_for_ip_address: yes
         customization:
           hostname: "{{ item }}"
           domain: "{{ domain_name }}"
@@ -46,13 +46,13 @@
           memory_mb: "{{ vm_size[flavor]['memory'] }}"
         networks:
           - name: VM Network
-#           ip: 
-#           netmask: 255.255.255.0
-#           gateway: 192.168.1.1
+            ip: "{{ ip_addr }}"
+            netmask: "{{ net_mask }}"
+            gateway: "{{ gate_way }}"
 #            mac: aa:bb:dd:aa:00:14
 #           domain: my_domain
-#           dns_servers:
-#           - 192.168.1.1
+            dns_servers:
+            - 192.168.1.1
 #           - 192.168.1.2
 #         - vlan: 1234
 #           type: dhcp
