@@ -56,6 +56,7 @@
 #           - 192.168.1.2
 #         - vlan: 1234
 #           type: dhcp
+        state: powered-on
 #     loop: "{{ vm_name }}"
 #        - { name: "{{ vm_name }}", ip: "{{ vm_ip }}" }
 
