@@ -60,8 +60,16 @@
 #     loop: "{{ vm_name }}"
 #        - { name: "{{ vm_name }}", ip: "{{ vm_ip }}" }
 
-    - name: Wait 300 seconds, but only start checking after 60 seconds
-      wait_for_connection:
-        delay: 60
-        timeout: 300
+#   - name: Wait 300 seconds, but only start checking after 60 seconds
+#     wait_for_connection:
+#       delay: 60
+#       timeout: 300
+
+    - name: Wait for server to restart
+      local_action:
+        module: wait_for
+          host="{{ ip_addr }}"
+          port=22
+          delay=30
+          timeout=300
 
