@@ -33,21 +33,21 @@
         cluster: "{{ vmcluster }}"
 #       customization_spec: "{{ customize_spec }}"
 #       wait_for_ip_address: yes
-        customization:
-          hostname: "{{ vm_name }}"
-          domain: "{{ domain_name }}"
-        disk:
-        - disk2:
-          size_gb: "{{ vm_size[flavor]['size'] }}"
+#       customization:
+#         hostname: "{{ vm_name }}"
+#         domain: "{{ domain_name }}"
+#       disk:
+#       - disk2:
+#         size_gb: "{{ vm_size[flavor]['size'] }}"
           autoselect_datastore: true
-        hardware:
-          num_cpus: "{{ vm_size[flavor]['cpu'] }}"
-          memory_mb: "{{ vm_size[flavor]['memory'] }}"
-        networks:
-          - name: VM Network
-            ip: "{{ ip_addr }}"
-            netmask: "{{ net_mask }}"
-            gateway: "{{ gate_way }}"
+#       hardware:
+#         num_cpus: "{{ vm_size[flavor]['cpu'] }}"
+#         memory_mb: "{{ vm_size[flavor]['memory'] }}"
+#       networks:
+#         - name: VM Network
+#           ip: "{{ ip_addr }}"
+#           netmask: "{{ net_mask }}"
+#           gateway: "{{ gate_way }}"
 #            mac: aa:bb:dd:aa:00:14
 #           domain: my_domain
 #           dns_servers:
