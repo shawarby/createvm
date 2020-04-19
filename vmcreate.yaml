@@ -14,8 +14,7 @@
         size: 100
     datastore: datastore1
 #   customize_spec: RHEL7
-    folder_name: 'Discovered virtual machine'
-    notes: Created by Ansible
+#   notes: Created by Ansible
 #   vm_name: "{{ survey_vm_name.split('\n') }}"
     
     
@@ -51,8 +50,8 @@
             gateway: "{{ gate_way }}"
 #            mac: aa:bb:dd:aa:00:14
 #           domain: my_domain
-            dns_servers:
-            - 192.168.1.1
+#           dns_servers:
+#           - 192.168.1.1
 #           - 192.168.1.2
 #         - vlan: 1234
 #           type: dhcp
@@ -72,4 +71,3 @@
 #         port=22
 #         delay=30
 #         timeout=300
-
